@@ -17,13 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
-
-# 기본 홈페이지 뷰
-def home(request):
-    return HttpResponse("Hello, Django!")
+from .views import signupView, home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
-    path('', home),
+    #path('signup/', signupView, name="signupView"),
+    path("", home, name="home"),
 ]
