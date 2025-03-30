@@ -5,7 +5,8 @@ from user.forms import SignUpForm
 
 @login_required
 def home(request):
-    return render(request, "templates/home.html", {})
+    print(f"현재 로그인한 사용자: {request.user.username}")
+    return render(request, "home.html", {'username':request.user.username})
 
 def signup_view(request):
     if request.method =='POST':
