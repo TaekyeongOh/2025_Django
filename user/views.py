@@ -42,7 +42,7 @@ def password_reset(request):
 
 def password_change(request):
     return render(request, "registration/password_change.html", {})
-
+ 
 def send_email(request):
     subject = "message"
     to = ["justfortestqwe@gmail.com"]
